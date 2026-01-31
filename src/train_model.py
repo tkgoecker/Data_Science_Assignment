@@ -2,36 +2,33 @@ from __future__ import annotations
 
 import argparse
 import json
-import os
 from pathlib import Path
+from typing import Dict, List
 
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
 from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import OneHotEncoder
-from sklearn.impute import SimpleImputer
-from sklearn.metrics import (
-    roc_auc_score,
-    f1_score,
-    confusion_matrix,
-    classification_report,
-    RocCurveDisplay,
-)
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.inspection import permutation_importance
-
-import matplotlib.pyplot as plt
+from sklearn.metrics import (
+    roc_auc_score,
+    roc_curve,
+    f1_score,
+    confusion_matrix,
+    ConfusionMatrixDisplay,
+)
 
 from src.utils import (
     load_data,
     basic_cleaning,
-    add_derived_features,
-    infer_text_column,
-    infer_target_column,
-    train_test_split_stratified,
+    validate_columns,
+    add_feature_engineering,
+    encode_binary_target,
+    stratified_split,
 )
 
 
@@ -39,211 +36,196 @@ def _print(msg: str) -> None:
     print(msg, flush=True)
 
 
-def build_preprocessor(X: pd.DataFrame, text_col: str | None):
-    X = X.copy()
+def build_preprocessor(numeric_features: List[str], categorical_features: List[str]) -> ColumnTransformer:
+    numeric_transformer = Pipeline(steps=[("scaler", StandardScaler())])
 
-    if text_col and text_col in X.columns:
-        X = X.drop(columns=[text_col])
+    categorical_transformer = Pipeline(
+        steps=[("onehot", OneHotEncoder(handle_unknown="ignore"))]
+    )
 
-    for id_col in ["patient_id", "id", "member_id", "mrn"]:
-        if id_col in X.columns:
-            X = X.drop(columns=[id_col])
-
-    numeric_features = X.select_dtypes(include=["number", "int", "float", "Int64"]).columns.tolist()
-    categorical_features = X.select_dtypes(include=["object", "category", "bool"]).columns.tolist()
-
-    numeric_transformer = Pipeline(steps=[
-        ("imputer", SimpleImputer(strategy="median")),
-    ])
-
-    categorical_transformer = Pipeline(steps=[
-        ("imputer", SimpleImputer(strategy="most_frequent")),
-        ("onehot", OneHotEncoder(handle_unknown="ignore")),
-    ])
-
-    preprocessor = ColumnTransformer(
+    return ColumnTransformer(
         transformers=[
             ("num", numeric_transformer, numeric_features),
             ("cat", categorical_transformer, categorical_features),
         ],
         remainder="drop",
+        verbose_feature_names_out=False,
     )
 
-    return preprocessor, numeric_features, categorical_features
 
-
-def get_feature_names(preprocessor: ColumnTransformer, numeric_features: list[str], categorical_features: list[str]) -> list[str]:
-    if len(categorical_features) > 0:
-        ohe = preprocessor.named_transformers_["cat"].named_steps["onehot"]
-        cat_names = ohe.get_feature_names_out(categorical_features).tolist()
-    else:
-        cat_names = []
-    return numeric_features + cat_names
-
-
-def evaluate_model(model_name: str, model: Pipeline, X_test: pd.DataFrame, y_test: pd.Series, reports_dir: Path) -> dict:
-    y_pred = model.predict(X_test)
-
-    if hasattr(model, "predict_proba"):
-        y_score = model.predict_proba(X_test)[:, 1]
-    else:
-        y_score = model.decision_function(X_test)
-
-    roc = roc_auc_score(y_test, y_score)
-    f1 = f1_score(y_test, y_pred)
-    cm = confusion_matrix(y_test, y_pred)
-
-    _print("\n" + "=" * 90)
-    _print(f"{model_name} Evaluation")
-    _print("=" * 90)
-    _print(f"ROC AUC: {roc:.4f}")
-    _print(f"F1:      {f1:.4f}")
-    _print("\nConfusion Matrix (rows=true, cols=pred):")
-    _print(str(cm))
-    _print("\nClassification Report:")
-    _print(classification_report(y_test, y_pred, digits=4))
-
-    RocCurveDisplay.from_predictions(y_test, y_score)
-    plt.title(f"ROC Curve - {model_name}")
-
-    roc_path = reports_dir / f"roc_{model_name.lower().replace(' ', '_')}.png"
-    plt.savefig(roc_path, bbox_inches="tight")
-    _print(f"Saved ROC curve to: {roc_path}")
-
+def get_feature_names(preprocessor: ColumnTransformer) -> List[str]:
     try:
-        plt.show()
+        return preprocessor.get_feature_names_out().tolist()
     except Exception:
-        pass
+        return []
 
+
+def plot_roc(y_true: np.ndarray, y_proba: np.ndarray, title: str, out_path: Path) -> None:
+    fpr, tpr, _ = roc_curve(y_true, y_proba)
+    auc = roc_auc_score(y_true, y_proba)
+
+    plt.figure()
+    plt.plot(fpr, tpr, label=f"AUC={auc:.3f}")
+    plt.plot([0, 1], [0, 1], linestyle="--")
+    plt.xlabel("False Positive Rate")
+    plt.ylabel("True Positive Rate")
+    plt.title(title)
+    plt.legend(loc="lower right")
+    plt.tight_layout()
+    plt.savefig(out_path)
     plt.close()
 
-    return {
-        "model": model_name,
-        "roc_auc": float(roc),
-        "f1": float(f1),
-        "confusion_matrix": cm.tolist(),
-    }
+
+def plot_confusion(y_true: np.ndarray, y_pred: np.ndarray, title: str, out_path: Path) -> None:
+    cm = confusion_matrix(y_true, y_pred)
+    disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=["No", "Yes"])
+    plt.figure()
+    disp.plot(values_format="d")
+    plt.title(title)
+    plt.tight_layout()
+    plt.savefig(out_path)
+    plt.close()
 
 
-def print_logreg_top_features(model: Pipeline, feature_names: list[str], top_n: int = 15) -> list[dict]:
-    clf = model.named_steps["clf"]
-    coefs = clf.coef_.ravel()
-    order = np.argsort(np.abs(coefs))[::-1][:top_n]
+def top_features_from_logreg(model: LogisticRegression, feature_names: List[str], top_k: int = 12) -> List[Dict]:
+    if not feature_names or not hasattr(model, "coef_"):
+        return []
 
-    _print("\nTop influential Logistic Regression features (by |coef|):")
-    out = []
-    for idx in order:
-        row = {"feature": feature_names[idx], "coef": float(coefs[idx])}
-        out.append(row)
-        _print(f"  {row['feature'][:45]:45s}  coef={row['coef']: .4f}")
-    return out
+    coefs = model.coef_.ravel()
+    idx = np.argsort(np.abs(coefs))[::-1][:top_k]
+    return [{"feature": feature_names[i], "coef": float(coefs[i])} for i in idx]
 
 
-def permutation_importance_top(model: Pipeline, X_test: pd.DataFrame, y_test: pd.Series, feature_names: list[str], top_n: int = 15) -> list[dict]:
-    preprocessor = model.named_steps["preprocess"]
-    clf = model.named_steps["clf"]
-    X_test_t = preprocessor.transform(X_test)
+def top_features_from_rf(model: RandomForestClassifier, feature_names: List[str], top_k: int = 12) -> List[Dict]:
+    if not feature_names or not hasattr(model, "feature_importances_"):
+        return []
 
-    r = permutation_importance(
-        clf,
-        X_test_t,
-        y_test,
-        n_repeats=10,
-        random_state=42,
-        scoring="f1",
-    )
-
-    importances = r.importances_mean
-    order = np.argsort(importances)[::-1][:top_n]
-
-    _print("\nTop features by permutation importance (scoring=F1):")
-    out = []
-    for idx in order:
-        row = {"feature": feature_names[idx], "importance": float(importances[idx])}
-        out.append(row)
-        _print(f"  {row['feature'][:45]:45s}  importance={row['importance']: .4f}")
-    return out
+    imps = model.feature_importances_
+    idx = np.argsort(imps)[::-1][:top_k]
+    return [{"feature": feature_names[i], "importance": float(imps[i])} for i in idx]
 
 
 def main(data_path: str) -> None:
     _print("\n>>> STARTING src.train_model main() <<<")
-    _print(f"CWD: {os.getcwd()}")
-    _print(f"Data path: {data_path}")
+    _print(f"CWD: {Path.cwd()}")
+    _print(f"Data path: {data_path}\n")
 
     reports_dir = Path("reports")
-    reports_dir.mkdir(exist_ok=True)
+    reports_dir.mkdir(parents=True, exist_ok=True)
 
-    if not os.path.exists(data_path):
-        raise FileNotFoundError(f"Data file not found at: {data_path}")
+    required_cols = [
+        "patient_id",
+        "age",
+        "gender",
+        "diagnosis_code",
+        "num_previous_admissions",
+        "medication_type",
+        "length_of_stay",
+        "readmitted_30_days",
+        "discharge_note",
+    ]
 
     df = load_data(data_path)
     df = basic_cleaning(df)
-    df = add_derived_features(df)
+    validate_columns(df, required_cols)
 
-    target_col = infer_target_column(df)
-    text_col = infer_text_column(df)
+    _print(f"Loaded data shape: {df.shape}")
 
-    _print(f"\nLoaded data shape: {df.shape}")
+    target_col = "readmitted_30_days"
+    text_col = "discharge_note"
+
     _print(f"Target column: {target_col}")
-    _print(f"Text column: {text_col if text_col else 'None found'}")
+    _print(f"Text column: {text_col}\n")
 
-    _print("\nTarget distribution:")
-    _print(str(df[target_col].value_counts(dropna=False)))
-
+    _print("Target distribution:")
+    _print(str(df[target_col].value_counts()))
     _print("\nMissing values (top 10):")
     _print(str(df.isna().sum().sort_values(ascending=False).head(10)))
+    _print("")
 
-    y = df[target_col].astype(int)
-    X = df.drop(columns=[target_col])
+    # Feature engineering
+    df = add_feature_engineering(df)
 
-    preprocessor, numeric_features, categorical_features = build_preprocessor(X, text_col=text_col)
-    split = train_test_split_stratified(X, y, test_size=0.2, random_state=42)
+    # Encode target to 0/1 safely
+    y, target_mapping = encode_binary_target(df[target_col])
+    _print(f"Target mapping: {target_mapping}\n")
 
-    logreg = Pipeline(steps=[
-        ("preprocess", preprocessor),
-        ("clf", LogisticRegression(max_iter=3000, class_weight="balanced")),
-    ])
+    # Build X (drop id + target + free text)
+    X = df.drop(columns=["patient_id", target_col, text_col])
 
-    rf = Pipeline(steps=[
-        ("preprocess", preprocessor),
-        ("clf", RandomForestClassifier(
+    numeric_features = ["age", "num_previous_admissions", "length_of_stay", "admissions_per_day"]
+    categorical_features = ["gender", "diagnosis_code", "medication_type", "age_bucket"]
+
+    split = stratified_split(X, y, test_size=0.2, random_state=42)
+
+    preprocessor = build_preprocessor(numeric_features, categorical_features)
+
+    models = {
+        "logistic_regression": LogisticRegression(max_iter=2000, class_weight="balanced"),
+        "random_forest": RandomForestClassifier(
             n_estimators=300,
             random_state=42,
-            class_weight="balanced_subsample",
-        )),
-    ])
+            class_weight="balanced",
+        ),
+    }
 
-    _print("\nFitting models...")
-    logreg.fit(split.X_train, split.y_train)
-    rf.fit(split.X_train, split.y_train)
-    _print("Done fitting models.")
+    metrics: Dict[str, Dict] = {}
+    top_feats: Dict[str, List[Dict]] = {}
 
-    results = []
-    results.append(evaluate_model("Logistic Regression", logreg, split.X_test, split.y_test, reports_dir))
-    results.append(evaluate_model("Random Forest", rf, split.X_test, split.y_test, reports_dir))
+    for name, clf in models.items():
+        _print(f"--- Training: {name} ---")
 
-    feature_names = get_feature_names(preprocessor, numeric_features, categorical_features)
-    logreg_top = print_logreg_top_features(logreg, feature_names, top_n=15)
-    rf_top = permutation_importance_top(rf, split.X_test, split.y_test, feature_names, top_n=15)
+        pipe = Pipeline(steps=[("preprocess", preprocessor), ("model", clf)])
+        pipe.fit(split.X_train, split.y_train)
 
-    metrics_out = {
-        "results": results,
-        "logreg_top_features": logreg_top,
-        "rf_permutation_importance": rf_top,
-        "data_shape": list(df.shape),
-        "target_col": target_col,
-        "text_col": text_col,
+        y_proba = pipe.predict_proba(split.X_test)[:, 1]
+        y_pred = (y_proba >= 0.5).astype(int)
+
+        auc = roc_auc_score(split.y_test, y_proba)
+        f1 = f1_score(split.y_test, y_pred)
+        cm = confusion_matrix(split.y_test, y_pred).tolist()
+
+        metrics[name] = {
+            "roc_auc": float(auc),
+            "f1": float(f1),
+            "confusion_matrix": cm,
+        }
+
+        roc_path = reports_dir / f"roc_{name}.png"
+        cm_path = reports_dir / f"confusion_{name}.png"
+        plot_roc(split.y_test.values, y_proba, f"ROC Curve - {name}", roc_path)
+        plot_confusion(split.y_test.values, y_pred, f"Confusion Matrix - {name}", cm_path)
+
+        fitted_preprocessor = pipe.named_steps["preprocess"]
+        feature_names = get_feature_names(fitted_preprocessor)
+
+        fitted_model = pipe.named_steps["model"]
+        if name == "logistic_regression":
+            top_feats[name] = top_features_from_logreg(fitted_model, feature_names)
+        else:
+            top_feats[name] = top_features_from_rf(fitted_model, feature_names)
+
+        _print(f"ROC AUC: {auc:.4f} | F1: {f1:.4f}")
+        _print(f"Saved ROC -> {roc_path}")
+        _print(f"Saved Confusion Matrix -> {cm_path}\n")
+
+    out = {
+        "target": target_col,
+        "text_column": text_col,
+        "rows": int(df.shape[0]),
+        "models": metrics,
+        "top_features": top_feats,
     }
 
     metrics_path = reports_dir / "metrics.json"
-    metrics_path.write_text(json.dumps(metrics_out, indent=2))
-    _print(f"\nSaved metrics JSON to: {metrics_path}")
+    metrics_path.write_text(json.dumps(out, indent=2), encoding="utf-8")
 
+    _print(f"Saved metrics JSON to: {metrics_path}")
     _print("\n>>> FINISHED src.train_model main() <<<\n")
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--data-path", type=str, default="data/Assignment_Data.xlsx")
+    parser.add_argument("--data-path", type=str, default="Data/Assignment_Data.xlsx")
     args = parser.parse_args()
     main(args.data_path)
