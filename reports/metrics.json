@@ -1,0 +1,137 @@
+{
+  "target": "readmitted_30_days",
+  "text_column": "discharge_note",
+  "rows": 200,
+  "models": {
+    "logistic_regression": {
+      "roc_auc": 0.45299145299145305,
+      "f1": 0.34285714285714286,
+      "confusion_matrix": [
+        [
+          11,
+          16
+        ],
+        [
+          7,
+          6
+        ]
+      ]
+    },
+    "random_forest": {
+      "roc_auc": 0.4245014245014246,
+      "f1": 0.2857142857142857,
+      "confusion_matrix": [
+        [
+          22,
+          5
+        ],
+        [
+          10,
+          3
+        ]
+      ]
+    }
+  },
+  "top_features": {
+    "logistic_regression": [
+      {
+        "feature": "age_bucket_0-29",
+        "coef": 0.9390868601873403
+      },
+      {
+        "feature": "age_bucket_45-59",
+        "coef": -0.6835130819058326
+      },
+      {
+        "feature": "age_bucket_30-44",
+        "coef": -0.6125852913140789
+      },
+      {
+        "feature": "medication_type_Type C",
+        "coef": 0.47427951562921866
+      },
+      {
+        "feature": "diagnosis_code_D003",
+        "coef": 0.4567957897747541
+      },
+      {
+        "feature": "gender_Female",
+        "coef": -0.4015139977175984
+      },
+      {
+        "feature": "gender_Male",
+        "coef": 0.39260108513859215
+      },
+      {
+        "feature": "age_bucket_60-74",
+        "coef": 0.3825048749920245
+      },
+      {
+        "feature": "medication_type_Type A",
+        "coef": -0.3482750038986629
+      },
+      {
+        "feature": "admissions_per_day",
+        "coef": -0.3433974866773308
+      },
+      {
+        "feature": "diagnosis_code_D002",
+        "coef": -0.30789158682204465
+      },
+      {
+        "feature": "length_of_stay",
+        "coef": 0.2064290642835016
+      }
+    ],
+    "random_forest": [
+      {
+        "feature": "age",
+        "importance": 0.1949917814048735
+      },
+      {
+        "feature": "admissions_per_day",
+        "importance": 0.16257764120833906
+      },
+      {
+        "feature": "length_of_stay",
+        "importance": 0.14056516734426636
+      },
+      {
+        "feature": "num_previous_admissions",
+        "importance": 0.0837016366947514
+      },
+      {
+        "feature": "medication_type_Type C",
+        "importance": 0.035998286861188424
+      },
+      {
+        "feature": "diagnosis_code_D001",
+        "importance": 0.03509883559646715
+      },
+      {
+        "feature": "diagnosis_code_D003",
+        "importance": 0.03428376186261557
+      },
+      {
+        "feature": "age_bucket_0-29",
+        "importance": 0.033493821962160095
+      },
+      {
+        "feature": "diagnosis_code_D002",
+        "importance": 0.032278933617266845
+      },
+      {
+        "feature": "medication_type_Type B",
+        "importance": 0.03090263510869614
+      },
+      {
+        "feature": "medication_type_Type A",
+        "importance": 0.029752625872961
+      },
+      {
+        "feature": "gender_Male",
+        "importance": 0.029392342426984838
+      }
+    ]
+  }
+}

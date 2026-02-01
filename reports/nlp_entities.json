@@ -1,0 +1,2909 @@
+[
+  {
+    "patient_id": 1,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "scheduled"
+      ]
+    }
+  },
+  {
+    "patient_id": 2,
+    "entities": {
+      "diagnosis": [
+        "post-surgery"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 3,
+    "entities": {
+      "diagnosis": [
+        "relapse"
+      ],
+      "treatment": [],
+      "symptoms": [
+        "symptoms"
+      ],
+      "medications": [],
+      "follow_up": [
+        "monitoring",
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 4,
+    "entities": {
+      "diagnosis": [
+        "post-surgery"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 5,
+    "entities": {
+      "diagnosis": [
+        "post-surgery"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 6,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "scheduled"
+      ]
+    }
+  },
+  {
+    "patient_id": 7,
+    "entities": {
+      "diagnosis": [
+        "pneumonia"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 8,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "recommend follow-up"
+      ]
+    }
+  },
+  {
+    "patient_id": 9,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "antibiotics"
+      ],
+      "symptoms": [],
+      "medications": [
+        "antibiotics"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 10,
+    "entities": {
+      "diagnosis": [
+        "blood pressure"
+      ],
+      "treatment": [
+        "medication"
+      ],
+      "symptoms": [],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 11,
+    "entities": {
+      "diagnosis": [
+        "post-surgery"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 12,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "hydration",
+        "rest"
+      ],
+      "symptoms": [
+        "discomfort"
+      ],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 13,
+    "entities": {
+      "diagnosis": [
+        "relapse"
+      ],
+      "treatment": [],
+      "symptoms": [
+        "symptoms"
+      ],
+      "medications": [],
+      "follow_up": [
+        "monitoring",
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 14,
+    "entities": {
+      "diagnosis": [
+        "pneumonia"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 15,
+    "entities": {
+      "diagnosis": [
+        "post-surgery"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 16,
+    "entities": {
+      "diagnosis": [
+        "pneumonia"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 17,
+    "entities": {
+      "diagnosis": [
+        "pneumonia"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 18,
+    "entities": {
+      "diagnosis": [
+        "post-surgery"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 19,
+    "entities": {
+      "diagnosis": [
+        "infection"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 20,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "medication",
+        "treatment",
+        "switched"
+      ],
+      "symptoms": [
+        "reaction"
+      ],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 21,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "hydration",
+        "rest"
+      ],
+      "symptoms": [
+        "discomfort"
+      ],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 22,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "antibiotics"
+      ],
+      "symptoms": [],
+      "medications": [
+        "antibiotics"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 23,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "antibiotics"
+      ],
+      "symptoms": [],
+      "medications": [
+        "antibiotics"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 24,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "hydration",
+        "rest"
+      ],
+      "symptoms": [
+        "discomfort"
+      ],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 25,
+    "entities": {
+      "diagnosis": [
+        "infection"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 26,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "antibiotics"
+      ],
+      "symptoms": [],
+      "medications": [
+        "antibiotics"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 27,
+    "entities": {
+      "diagnosis": [
+        "pneumonia"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 28,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "scheduled"
+      ]
+    }
+  },
+  {
+    "patient_id": 29,
+    "entities": {
+      "diagnosis": [
+        "relapse"
+      ],
+      "treatment": [],
+      "symptoms": [
+        "symptoms"
+      ],
+      "medications": [],
+      "follow_up": [
+        "monitoring",
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 30,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "recommend follow-up"
+      ]
+    }
+  },
+  {
+    "patient_id": 31,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "antibiotics"
+      ],
+      "symptoms": [],
+      "medications": [
+        "antibiotics"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 32,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "hydration",
+        "rest"
+      ],
+      "symptoms": [
+        "discomfort"
+      ],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 33,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "scheduled"
+      ]
+    }
+  },
+  {
+    "patient_id": 34,
+    "entities": {
+      "diagnosis": [
+        "post-surgery"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 35,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "medication",
+        "treatment",
+        "switched"
+      ],
+      "symptoms": [
+        "reaction"
+      ],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 36,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "hydration",
+        "rest"
+      ],
+      "symptoms": [
+        "discomfort"
+      ],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 37,
+    "entities": {
+      "diagnosis": [
+        "pneumonia"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 38,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "medication",
+        "treatment",
+        "switched"
+      ],
+      "symptoms": [
+        "reaction"
+      ],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 39,
+    "entities": {
+      "diagnosis": [
+        "relapse"
+      ],
+      "treatment": [],
+      "symptoms": [
+        "symptoms"
+      ],
+      "medications": [],
+      "follow_up": [
+        "monitoring",
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 40,
+    "entities": {
+      "diagnosis": [
+        "relapse"
+      ],
+      "treatment": [],
+      "symptoms": [
+        "symptoms"
+      ],
+      "medications": [],
+      "follow_up": [
+        "monitoring",
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 41,
+    "entities": {
+      "diagnosis": [
+        "infection"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 42,
+    "entities": {
+      "diagnosis": [
+        "blood pressure"
+      ],
+      "treatment": [
+        "medication"
+      ],
+      "symptoms": [],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 43,
+    "entities": {
+      "diagnosis": [
+        "infection"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 44,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "scheduled"
+      ]
+    }
+  },
+  {
+    "patient_id": 45,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "medication",
+        "treatment",
+        "switched"
+      ],
+      "symptoms": [
+        "reaction"
+      ],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 46,
+    "entities": {
+      "diagnosis": [
+        "blood pressure"
+      ],
+      "treatment": [
+        "medication"
+      ],
+      "symptoms": [],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 47,
+    "entities": {
+      "diagnosis": [
+        "post-surgery"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 48,
+    "entities": {
+      "diagnosis": [
+        "pneumonia"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 49,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "medication",
+        "treatment",
+        "switched"
+      ],
+      "symptoms": [
+        "reaction"
+      ],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 50,
+    "entities": {
+      "diagnosis": [
+        "infection"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 51,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "recommend follow-up"
+      ]
+    }
+  },
+  {
+    "patient_id": 52,
+    "entities": {
+      "diagnosis": [
+        "blood pressure"
+      ],
+      "treatment": [
+        "medication"
+      ],
+      "symptoms": [],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 53,
+    "entities": {
+      "diagnosis": [
+        "blood pressure"
+      ],
+      "treatment": [
+        "medication"
+      ],
+      "symptoms": [],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 54,
+    "entities": {
+      "diagnosis": [
+        "pneumonia"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 55,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "antibiotics"
+      ],
+      "symptoms": [],
+      "medications": [
+        "antibiotics"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 56,
+    "entities": {
+      "diagnosis": [
+        "relapse"
+      ],
+      "treatment": [],
+      "symptoms": [
+        "symptoms"
+      ],
+      "medications": [],
+      "follow_up": [
+        "monitoring",
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 57,
+    "entities": {
+      "diagnosis": [
+        "relapse"
+      ],
+      "treatment": [],
+      "symptoms": [
+        "symptoms"
+      ],
+      "medications": [],
+      "follow_up": [
+        "monitoring",
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 58,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "recommend follow-up"
+      ]
+    }
+  },
+  {
+    "patient_id": 59,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "scheduled"
+      ]
+    }
+  },
+  {
+    "patient_id": 60,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "scheduled"
+      ]
+    }
+  },
+  {
+    "patient_id": 61,
+    "entities": {
+      "diagnosis": [
+        "post-surgery"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 62,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "medication",
+        "treatment",
+        "switched"
+      ],
+      "symptoms": [
+        "reaction"
+      ],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 63,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "hydration",
+        "rest"
+      ],
+      "symptoms": [
+        "discomfort"
+      ],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 64,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "antibiotics"
+      ],
+      "symptoms": [],
+      "medications": [
+        "antibiotics"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 65,
+    "entities": {
+      "diagnosis": [
+        "infection"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 66,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "hydration",
+        "rest"
+      ],
+      "symptoms": [
+        "discomfort"
+      ],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 67,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "hydration",
+        "rest"
+      ],
+      "symptoms": [
+        "discomfort"
+      ],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 68,
+    "entities": {
+      "diagnosis": [
+        "blood pressure"
+      ],
+      "treatment": [
+        "medication"
+      ],
+      "symptoms": [],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 69,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "recommend follow-up"
+      ]
+    }
+  },
+  {
+    "patient_id": 70,
+    "entities": {
+      "diagnosis": [
+        "relapse"
+      ],
+      "treatment": [],
+      "symptoms": [
+        "symptoms"
+      ],
+      "medications": [],
+      "follow_up": [
+        "monitoring",
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 71,
+    "entities": {
+      "diagnosis": [
+        "post-surgery"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 72,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "scheduled"
+      ]
+    }
+  },
+  {
+    "patient_id": 73,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "recommend follow-up"
+      ]
+    }
+  },
+  {
+    "patient_id": 74,
+    "entities": {
+      "diagnosis": [
+        "blood pressure"
+      ],
+      "treatment": [
+        "medication"
+      ],
+      "symptoms": [],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 75,
+    "entities": {
+      "diagnosis": [
+        "infection"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 76,
+    "entities": {
+      "diagnosis": [
+        "post-surgery"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 77,
+    "entities": {
+      "diagnosis": [
+        "blood pressure"
+      ],
+      "treatment": [
+        "medication"
+      ],
+      "symptoms": [],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 78,
+    "entities": {
+      "diagnosis": [
+        "relapse"
+      ],
+      "treatment": [],
+      "symptoms": [
+        "symptoms"
+      ],
+      "medications": [],
+      "follow_up": [
+        "monitoring",
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 79,
+    "entities": {
+      "diagnosis": [
+        "relapse"
+      ],
+      "treatment": [],
+      "symptoms": [
+        "symptoms"
+      ],
+      "medications": [],
+      "follow_up": [
+        "monitoring",
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 80,
+    "entities": {
+      "diagnosis": [
+        "relapse"
+      ],
+      "treatment": [],
+      "symptoms": [
+        "symptoms"
+      ],
+      "medications": [],
+      "follow_up": [
+        "monitoring",
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 81,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "recommend follow-up"
+      ]
+    }
+  },
+  {
+    "patient_id": 82,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "recommend follow-up"
+      ]
+    }
+  },
+  {
+    "patient_id": 83,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "scheduled"
+      ]
+    }
+  },
+  {
+    "patient_id": 84,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "scheduled"
+      ]
+    }
+  },
+  {
+    "patient_id": 85,
+    "entities": {
+      "diagnosis": [
+        "infection"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 86,
+    "entities": {
+      "diagnosis": [
+        "post-surgery"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 87,
+    "entities": {
+      "diagnosis": [
+        "pneumonia"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 88,
+    "entities": {
+      "diagnosis": [
+        "pneumonia"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 89,
+    "entities": {
+      "diagnosis": [
+        "blood pressure"
+      ],
+      "treatment": [
+        "medication"
+      ],
+      "symptoms": [],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 90,
+    "entities": {
+      "diagnosis": [
+        "relapse"
+      ],
+      "treatment": [],
+      "symptoms": [
+        "symptoms"
+      ],
+      "medications": [],
+      "follow_up": [
+        "monitoring",
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 91,
+    "entities": {
+      "diagnosis": [
+        "post-surgery"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 92,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "hydration",
+        "rest"
+      ],
+      "symptoms": [
+        "discomfort"
+      ],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 93,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "recommend follow-up"
+      ]
+    }
+  },
+  {
+    "patient_id": 94,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "medication",
+        "treatment",
+        "switched"
+      ],
+      "symptoms": [
+        "reaction"
+      ],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 95,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "antibiotics"
+      ],
+      "symptoms": [],
+      "medications": [
+        "antibiotics"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 96,
+    "entities": {
+      "diagnosis": [
+        "infection"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 97,
+    "entities": {
+      "diagnosis": [
+        "relapse"
+      ],
+      "treatment": [],
+      "symptoms": [
+        "symptoms"
+      ],
+      "medications": [],
+      "follow_up": [
+        "monitoring",
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 98,
+    "entities": {
+      "diagnosis": [
+        "relapse"
+      ],
+      "treatment": [],
+      "symptoms": [
+        "symptoms"
+      ],
+      "medications": [],
+      "follow_up": [
+        "monitoring",
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 99,
+    "entities": {
+      "diagnosis": [
+        "relapse"
+      ],
+      "treatment": [],
+      "symptoms": [
+        "symptoms"
+      ],
+      "medications": [],
+      "follow_up": [
+        "monitoring",
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 100,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "recommend follow-up"
+      ]
+    }
+  },
+  {
+    "patient_id": 101,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "recommend follow-up"
+      ]
+    }
+  },
+  {
+    "patient_id": 102,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "antibiotics"
+      ],
+      "symptoms": [],
+      "medications": [
+        "antibiotics"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 103,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "hydration",
+        "rest"
+      ],
+      "symptoms": [
+        "discomfort"
+      ],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 104,
+    "entities": {
+      "diagnosis": [
+        "post-surgery"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 105,
+    "entities": {
+      "diagnosis": [
+        "relapse"
+      ],
+      "treatment": [],
+      "symptoms": [
+        "symptoms"
+      ],
+      "medications": [],
+      "follow_up": [
+        "monitoring",
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 106,
+    "entities": {
+      "diagnosis": [
+        "pneumonia"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 107,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "scheduled"
+      ]
+    }
+  },
+  {
+    "patient_id": 108,
+    "entities": {
+      "diagnosis": [
+        "pneumonia"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 109,
+    "entities": {
+      "diagnosis": [
+        "blood pressure"
+      ],
+      "treatment": [
+        "medication"
+      ],
+      "symptoms": [],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 110,
+    "entities": {
+      "diagnosis": [
+        "pneumonia"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 111,
+    "entities": {
+      "diagnosis": [
+        "blood pressure"
+      ],
+      "treatment": [
+        "medication"
+      ],
+      "symptoms": [],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 112,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "medication",
+        "treatment",
+        "switched"
+      ],
+      "symptoms": [
+        "reaction"
+      ],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 113,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "scheduled"
+      ]
+    }
+  },
+  {
+    "patient_id": 114,
+    "entities": {
+      "diagnosis": [
+        "pneumonia"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 115,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "medication",
+        "treatment",
+        "switched"
+      ],
+      "symptoms": [
+        "reaction"
+      ],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 116,
+    "entities": {
+      "diagnosis": [
+        "infection"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 117,
+    "entities": {
+      "diagnosis": [
+        "post-surgery"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 118,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "medication",
+        "treatment",
+        "switched"
+      ],
+      "symptoms": [
+        "reaction"
+      ],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 119,
+    "entities": {
+      "diagnosis": [
+        "post-surgery"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 120,
+    "entities": {
+      "diagnosis": [
+        "pneumonia"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 121,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "hydration",
+        "rest"
+      ],
+      "symptoms": [
+        "discomfort"
+      ],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 122,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "medication",
+        "treatment",
+        "switched"
+      ],
+      "symptoms": [
+        "reaction"
+      ],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 123,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "scheduled"
+      ]
+    }
+  },
+  {
+    "patient_id": 124,
+    "entities": {
+      "diagnosis": [
+        "pneumonia"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 125,
+    "entities": {
+      "diagnosis": [
+        "relapse"
+      ],
+      "treatment": [],
+      "symptoms": [
+        "symptoms"
+      ],
+      "medications": [],
+      "follow_up": [
+        "monitoring",
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 126,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "recommend follow-up"
+      ]
+    }
+  },
+  {
+    "patient_id": 127,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "medication",
+        "treatment",
+        "switched"
+      ],
+      "symptoms": [
+        "reaction"
+      ],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 128,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "scheduled"
+      ]
+    }
+  },
+  {
+    "patient_id": 129,
+    "entities": {
+      "diagnosis": [
+        "infection"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 130,
+    "entities": {
+      "diagnosis": [
+        "relapse"
+      ],
+      "treatment": [],
+      "symptoms": [
+        "symptoms"
+      ],
+      "medications": [],
+      "follow_up": [
+        "monitoring",
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 131,
+    "entities": {
+      "diagnosis": [
+        "infection"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 132,
+    "entities": {
+      "diagnosis": [
+        "pneumonia"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 133,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "recommend follow-up"
+      ]
+    }
+  },
+  {
+    "patient_id": 134,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "medication",
+        "treatment",
+        "switched"
+      ],
+      "symptoms": [
+        "reaction"
+      ],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 135,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "medication",
+        "treatment",
+        "switched"
+      ],
+      "symptoms": [
+        "reaction"
+      ],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 136,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "hydration",
+        "rest"
+      ],
+      "symptoms": [
+        "discomfort"
+      ],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 137,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "hydration",
+        "rest"
+      ],
+      "symptoms": [
+        "discomfort"
+      ],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 138,
+    "entities": {
+      "diagnosis": [
+        "pneumonia"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 139,
+    "entities": {
+      "diagnosis": [
+        "pneumonia"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 140,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "recommend follow-up"
+      ]
+    }
+  },
+  {
+    "patient_id": 141,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "hydration",
+        "rest"
+      ],
+      "symptoms": [
+        "discomfort"
+      ],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 142,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "scheduled"
+      ]
+    }
+  },
+  {
+    "patient_id": 143,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "scheduled"
+      ]
+    }
+  },
+  {
+    "patient_id": 144,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "recommend follow-up"
+      ]
+    }
+  },
+  {
+    "patient_id": 145,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "scheduled"
+      ]
+    }
+  },
+  {
+    "patient_id": 146,
+    "entities": {
+      "diagnosis": [
+        "blood pressure"
+      ],
+      "treatment": [
+        "medication"
+      ],
+      "symptoms": [],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 147,
+    "entities": {
+      "diagnosis": [
+        "post-surgery"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 148,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "recommend follow-up"
+      ]
+    }
+  },
+  {
+    "patient_id": 149,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "recommend follow-up"
+      ]
+    }
+  },
+  {
+    "patient_id": 150,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "antibiotics"
+      ],
+      "symptoms": [],
+      "medications": [
+        "antibiotics"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 151,
+    "entities": {
+      "diagnosis": [
+        "relapse"
+      ],
+      "treatment": [],
+      "symptoms": [
+        "symptoms"
+      ],
+      "medications": [],
+      "follow_up": [
+        "monitoring",
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 152,
+    "entities": {
+      "diagnosis": [
+        "relapse"
+      ],
+      "treatment": [],
+      "symptoms": [
+        "symptoms"
+      ],
+      "medications": [],
+      "follow_up": [
+        "monitoring",
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 153,
+    "entities": {
+      "diagnosis": [
+        "blood pressure"
+      ],
+      "treatment": [
+        "medication"
+      ],
+      "symptoms": [],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 154,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "hydration",
+        "rest"
+      ],
+      "symptoms": [
+        "discomfort"
+      ],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 155,
+    "entities": {
+      "diagnosis": [
+        "pneumonia"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 156,
+    "entities": {
+      "diagnosis": [
+        "pneumonia"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 157,
+    "entities": {
+      "diagnosis": [
+        "infection"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 158,
+    "entities": {
+      "diagnosis": [
+        "blood pressure"
+      ],
+      "treatment": [
+        "medication"
+      ],
+      "symptoms": [],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 159,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "recommend follow-up"
+      ]
+    }
+  },
+  {
+    "patient_id": 160,
+    "entities": {
+      "diagnosis": [
+        "blood pressure"
+      ],
+      "treatment": [
+        "medication"
+      ],
+      "symptoms": [],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 161,
+    "entities": {
+      "diagnosis": [
+        "blood pressure"
+      ],
+      "treatment": [
+        "medication"
+      ],
+      "symptoms": [],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 162,
+    "entities": {
+      "diagnosis": [
+        "blood pressure"
+      ],
+      "treatment": [
+        "medication"
+      ],
+      "symptoms": [],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 163,
+    "entities": {
+      "diagnosis": [
+        "relapse"
+      ],
+      "treatment": [],
+      "symptoms": [
+        "symptoms"
+      ],
+      "medications": [],
+      "follow_up": [
+        "monitoring",
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 164,
+    "entities": {
+      "diagnosis": [
+        "blood pressure"
+      ],
+      "treatment": [
+        "medication"
+      ],
+      "symptoms": [],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 165,
+    "entities": {
+      "diagnosis": [
+        "post-surgery"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 166,
+    "entities": {
+      "diagnosis": [
+        "pneumonia"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 167,
+    "entities": {
+      "diagnosis": [
+        "infection"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 168,
+    "entities": {
+      "diagnosis": [
+        "post-surgery"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 169,
+    "entities": {
+      "diagnosis": [
+        "infection"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 170,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "antibiotics"
+      ],
+      "symptoms": [],
+      "medications": [
+        "antibiotics"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 171,
+    "entities": {
+      "diagnosis": [
+        "infection"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 172,
+    "entities": {
+      "diagnosis": [
+        "pneumonia"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 173,
+    "entities": {
+      "diagnosis": [
+        "pneumonia"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 174,
+    "entities": {
+      "diagnosis": [
+        "blood pressure"
+      ],
+      "treatment": [
+        "medication"
+      ],
+      "symptoms": [],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 175,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "medication",
+        "treatment",
+        "switched"
+      ],
+      "symptoms": [
+        "reaction"
+      ],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 176,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "antibiotics"
+      ],
+      "symptoms": [],
+      "medications": [
+        "antibiotics"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 177,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "recommend follow-up"
+      ]
+    }
+  },
+  {
+    "patient_id": 178,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "scheduled"
+      ]
+    }
+  },
+  {
+    "patient_id": 179,
+    "entities": {
+      "diagnosis": [
+        "infection"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 180,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "medication",
+        "treatment",
+        "switched"
+      ],
+      "symptoms": [
+        "reaction"
+      ],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 181,
+    "entities": {
+      "diagnosis": [
+        "blood pressure"
+      ],
+      "treatment": [
+        "medication"
+      ],
+      "symptoms": [],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 182,
+    "entities": {
+      "diagnosis": [
+        "relapse"
+      ],
+      "treatment": [],
+      "symptoms": [
+        "symptoms"
+      ],
+      "medications": [],
+      "follow_up": [
+        "monitoring",
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 183,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "recommend follow-up"
+      ]
+    }
+  },
+  {
+    "patient_id": 184,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "hydration",
+        "rest"
+      ],
+      "symptoms": [
+        "discomfort"
+      ],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 185,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "medication",
+        "treatment",
+        "switched"
+      ],
+      "symptoms": [
+        "reaction"
+      ],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 186,
+    "entities": {
+      "diagnosis": [
+        "relapse"
+      ],
+      "treatment": [],
+      "symptoms": [
+        "symptoms"
+      ],
+      "medications": [],
+      "follow_up": [
+        "monitoring",
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 187,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "antibiotics"
+      ],
+      "symptoms": [],
+      "medications": [
+        "antibiotics"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 188,
+    "entities": {
+      "diagnosis": [
+        "blood pressure"
+      ],
+      "treatment": [
+        "medication"
+      ],
+      "symptoms": [],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 189,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "recommend follow-up"
+      ]
+    }
+  },
+  {
+    "patient_id": 190,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "recommend follow-up"
+      ]
+    }
+  },
+  {
+    "patient_id": 191,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "recommend follow-up"
+      ]
+    }
+  },
+  {
+    "patient_id": 192,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "antibiotics"
+      ],
+      "symptoms": [],
+      "medications": [
+        "antibiotics"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 193,
+    "entities": {
+      "diagnosis": [
+        "infection"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 194,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "hydration",
+        "rest"
+      ],
+      "symptoms": [
+        "discomfort"
+      ],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 195,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "antibiotics"
+      ],
+      "symptoms": [],
+      "medications": [
+        "antibiotics"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 196,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": [
+        "follow-up",
+        "scheduled"
+      ]
+    }
+  },
+  {
+    "patient_id": 197,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "hydration",
+        "rest"
+      ],
+      "symptoms": [
+        "discomfort"
+      ],
+      "medications": [],
+      "follow_up": [
+        "advised"
+      ]
+    }
+  },
+  {
+    "patient_id": 198,
+    "entities": {
+      "diagnosis": [
+        "pneumonia"
+      ],
+      "treatment": [],
+      "symptoms": [],
+      "medications": [],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 199,
+    "entities": {
+      "diagnosis": [
+        "blood pressure"
+      ],
+      "treatment": [
+        "medication"
+      ],
+      "symptoms": [],
+      "medications": [
+        "medication"
+      ],
+      "follow_up": []
+    }
+  },
+  {
+    "patient_id": 200,
+    "entities": {
+      "diagnosis": [],
+      "treatment": [
+        "antibiotics"
+      ],
+      "symptoms": [],
+      "medications": [
+        "antibiotics"
+      ],
+      "follow_up": []
+    }
+  }
+]
