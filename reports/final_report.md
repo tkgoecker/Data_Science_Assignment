@@ -38,6 +38,16 @@ Stratified train/test splitting was used to preserve class balance.
 | Random Forest | 0.425 | 0.286 |
 
 Both models perform only slightly above random guessing, indicating weak predictive signal in the available structured features.
+### Full-Dataset Risk Scoring (Post-Training)
+
+In addition to standard train/test evaluation, the trained models were applied to the full dataset of 200 patients to simulate a deployment-style scenario. This analysis estimates how many patients would be flagged as high risk for readmission under a fixed probability threshold (0.5). These results are descriptive and are reported separately from evaluation metrics to avoid data leakage.
+
+| Model | Patients Flagged (out of 200) | Percentage |
+|------|-------------------------------|------------|
+| Logistic Regression | 84 | 42.0% |
+| Random Forest | 65 | 32.5% |
+
+The random forest model flags a number of patients similar to the observed readmission rate in the dataset (32.5%), while logistic regression produces a higher number of positive predictions, reflecting differences in model calibration and decision boundaries.
 
 ### Feature Importance (Logistic Regression)
 Most influential features included:
