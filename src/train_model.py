@@ -105,6 +105,68 @@ def top_features_from_rf(model: RandomForestClassifier, feature_names: List[str]
     return [{"feature": feature_names[i], "importance": float(imps[i])} for i in idx]
 
 
+def score_full_dataset(
+    pipe: Pipeline,
+    X_full: pd.DataFrame,
+    y_full: pd.Series,
+    df_full: pd.DataFrame,
+    model_name: str,
+    threshold: float = 0.50,
+    patient_id_col: str = "patient_id",
+    out_dir: Path = Path("reports"),
+) -> Dict:
+    """
+    Fit the pipeline on the FULL dataset (all rows), then score all rows.
+    This is for "deployment-style scoring" (how many would we flag), not evaluation.
+
+    Writes a CSV with per-patient probabilities and predictions.
+    Returns a summary dict that can be saved in metrics.json.
+    """
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    # Fit on full data
+    pipe.fit(X_full, y_full)
+
+    # Predict probabilities
+    if hasattr(pipe, "predict_proba"):
+        proba = pipe.predict_proba(X_full)[:, 1]
+    else:
+        # Pipeline should have predict_proba for these models, but keep safe fallback
+        preds = pipe.predict(X_full)
+        proba = preds.astype(float)
+
+    preds = (proba >= threshold).astype(int)
+
+    predicted_positive_count = int(preds.sum())
+    predicted_positive_rate = float(predicted_positive_count / len(preds))
+
+    # Save patient-level scoring file
+    patient_ids = (
+        df_full[patient_id_col].values
+        if patient_id_col in df_full.columns
+        else np.arange(1, len(df_full) + 1)
+    )
+
+    out_df = pd.DataFrame(
+        {
+            patient_id_col: patient_ids,
+            "y_true": y_full.values,
+            "p_readmit": proba,
+            f"pred_readmit_thr_{threshold:.2f}": preds,
+        }
+    )
+
+    out_path = out_dir / f"full_dataset_scoring_{model_name}.csv"
+    out_df.to_csv(out_path, index=False)
+
+    return {
+        "threshold": float(threshold),
+        "predicted_positive_count": predicted_positive_count,
+        "predicted_positive_rate": predicted_positive_rate,
+        "scoring_csv": str(out_path),
+    }
+
+
 def main(data_path: str) -> None:
     _print("\n>>> STARTING src.train_model main() <<<")
     _print(f"CWD: {Path.cwd()}")
@@ -171,12 +233,14 @@ def main(data_path: str) -> None:
 
     metrics: Dict[str, Dict] = {}
     top_feats: Dict[str, List[Dict]] = {}
+    trained_pipes: Dict[str, Pipeline] = {}
 
     for name, clf in models.items():
         _print(f"--- Training: {name} ---")
 
         pipe = Pipeline(steps=[("preprocess", preprocessor), ("model", clf)])
         pipe.fit(split.X_train, split.y_train)
+        trained_pipes[name] = pipe
 
         y_proba = pipe.predict_proba(split.X_test)[:, 1]
         y_pred = (y_proba >= 0.5).astype(int)
@@ -209,18 +273,43 @@ def main(data_path: str) -> None:
         _print(f"Saved ROC -> {roc_path}")
         _print(f"Saved Confusion Matrix -> {cm_path}\n")
 
+    # ---------------------------
+    # Full dataset scoring (post-training, deployment-style)
+    # ---------------------------
+    full_dataset_scoring: Dict[str, Dict] = {}
+    _print("Full-dataset scoring (deployment-style, not evaluation):")
+
+    for name, pipe in trained_pipes.items():
+        info = score_full_dataset(
+            pipe=pipe,
+            X_full=X,
+            y_full=y,
+            df_full=df,
+            model_name=name,
+            threshold=0.50,
+            patient_id_col="patient_id",
+            out_dir=reports_dir,
+        )
+        full_dataset_scoring[name] = info
+        _print(
+            f"  {name}: flagged {info['predicted_positive_count']} / {int(df.shape[0])} "
+            f"({info['predicted_positive_rate']:.1%}) at threshold={info['threshold']}"
+        )
+        _print(f"    -> Saved: {info['scoring_csv']}")
+
     out = {
         "target": target_col,
         "text_column": text_col,
         "rows": int(df.shape[0]),
         "models": metrics,
         "top_features": top_feats,
+        "full_dataset_scoring": full_dataset_scoring,
     }
 
     metrics_path = reports_dir / "metrics.json"
     metrics_path.write_text(json.dumps(out, indent=2), encoding="utf-8")
 
-    _print(f"Saved metrics JSON to: {metrics_path}")
+    _print(f"\nSaved metrics JSON to: {metrics_path}")
     _print("\n>>> FINISHED src.train_model main() <<<\n")
 
 
