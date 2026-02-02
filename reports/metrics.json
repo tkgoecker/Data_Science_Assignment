@@ -133,5 +133,19 @@
         "importance": 0.029392342426984838
       }
     ]
+  },
+  "full_dataset_scoring": {
+    "logistic_regression": {
+      "threshold": 0.5,
+      "predicted_positive_count": 84,
+      "predicted_positive_rate": 0.42,
+      "scoring_csv": "reports/full_dataset_scoring_logistic_regression.csv"
+    },
+    "random_forest": {
+      "threshold": 0.5,
+      "predicted_positive_count": 65,
+      "predicted_positive_rate": 0.325,
+      "scoring_csv": "reports/full_dataset_scoring_random_forest.csv"
+    }
   }
 }
